@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}About page{% endblock %}
+
+{% block content %}
+<h1>Welcome to My Site</h1>
+<p>This is the about page.</p>
+
+
+
+<h1>Blog Page</h1>
+{%regroup students by age as students_by_age %}
+{% for age_group in students_by_age %}
+    <h2>Age: {{ age_group.grouper }}</h2>
+    <ul>
+    {% for student in age_group.list %}
+        <li>{{ student.name }}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+<p>Progress:{%widthratio 50 100 100%} %</p>
+{%spaceless%}
+    <div>
+        <strong> This is spaced less example. </strong>
+            <span>
+                This text will have no spaces around it.
+            </span>
+    </div>
+    {% endspaceless %}
+    {% filter upper %}
+    <p>This text will be converted to uppercase.</p>
+    {% endfilter %}
+    {% for student in students %}
+    <p>{{student.name|lower}} is in class {{student.age}}</p>
+    {% endfor %}
+
+{% endblock %}

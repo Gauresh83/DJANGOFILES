@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<section class="hero">
+
+</section>
+<section class="projects">
+<h2> Featured Projects</h2>
+<div class="project-grid">
+    <div class="project-card">
+        <img src="{% static 'images/jarvis.jpg' %}" alt="Project 1">
+        <h3>Jarvis </h3>
+      
+    </div>
+    <div class="project-card">
+        <img src="{% static 'images/skypointer.jpg' %}" alt="Project 2">
+        <h3>skypointer</h3>
+        
+    </div>
+    <div class="project-card">
+        <img src="{% static 'images/banking.jpg' %}" alt="Project 3">
+        <h3>Banking System</h3>
+        
+    </div>
+    
+</div>
+
+</section>
+
+
+{%endblock  %}
